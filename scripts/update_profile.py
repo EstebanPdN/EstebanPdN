@@ -15,7 +15,7 @@ from urllib.request import Request, urlopen
 from xml.sax.saxutils import escape
 from zoneinfo import ZoneInfo
 
-from PIL import Image, ImageEnhance, ImageOps
+from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 WIDTH, HEIGHT = 1040, 512
@@ -152,11 +152,21 @@ def make_avatar(url):
                  timeout=30) as response:
         avatar = Image.open(io.BytesIO(response.read())).convert("RGB")
     avatar = ImageOps.fit(avatar, (365, 458), centering=(0.5, 0.5)).convert("L")
-    avatar = ImageEnhance.Contrast(avatar).enhance(1.15)
-    avatar = avatar.resize((46, 35), Image.Resampling.LANCZOS)
-    ramp = " .,:;i1tfLCG08@"
-    pixels = list(avatar.get_flattened_data())
-    return ["".join(ramp[min(len(ramp) - 1, (255 - pixels[y * 46 + x]) * len(ramp) // 256)]
+    tones = ImageEnhance.Contrast(avatar).enhance(1.15)
+    tones = tones.resize((46, 35), Image.Resampling.LANCZOS)
+    edges = avatar.filter(ImageFilter.FIND_EDGES).filter(ImageFilter.MaxFilter(3))
+    # FIND_EDGES retains the source border; remove that artificial frame.
+    ImageDraw.Draw(edges).rectangle((0, 0, edges.width - 1, edges.height - 1),
+                                   outline=0, width=3)
+    edges = edges.resize((46, 35), Image.Resampling.LANCZOS)
+    pixels = list(tones.get_flattened_data())
+    edge_pixels = list(edges.get_flattened_data())
+    # Keep smooth midtones sparse while preserving eyes, hair and silhouette.
+    scores = [max(((255 - value) / 255) ** 2.6,
+                  (edge_pixels[index] / 255) ** 0.7 * 0.5)
+              for index, value in enumerate(pixels)]
+    ramp = "   .,:;itfLCG08@"
+    return ["".join(ramp[min(len(ramp) - 1, int(scores[y * 46 + x] * len(ramp)))]
                     for x in range(46)).rstrip() for y in range(35)]
 
 
