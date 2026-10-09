@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/profile-dark.svg">
-  <source media="(prefers-color-scheme: light)" srcset="assets/profile-light.svg">
-  <img alt="EstebanPdN's GitHub profile: an ASCII portrait and terminal-style personal information and public GitHub statistics" src="assets/profile-dark.svg" width="1040">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/profile-dark.svg?v=discord-username">
+  <source media="(prefers-color-scheme: light)" srcset="assets/profile-light.svg?v=discord-username">
+  <img alt="EstebanPdN's GitHub profile: an ASCII portrait and terminal-style personal information and public GitHub statistics" src="assets/profile-dark.svg?v=discord-username" width="1040">
 </picture>
 
 <details>
