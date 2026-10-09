@@ -15,7 +15,7 @@ from urllib.request import Request, urlopen
 from xml.sax.saxutils import escape
 from zoneinfo import ZoneInfo
 
-from PIL import Image, ImageDraw, ImageEnhance, ImageFilter, ImageOps
+from PIL import Image, ImageEnhance, ImageOps
 
 ROOT = Path(__file__).resolve().parents[1]
 WIDTH, HEIGHT = 1040, 512
@@ -154,17 +154,9 @@ def make_avatar(url):
     avatar = ImageOps.fit(avatar, (365, 458), centering=(0.5, 0.5)).convert("L")
     tones = ImageEnhance.Contrast(avatar).enhance(1.15)
     tones = tones.resize((46, 35), Image.Resampling.LANCZOS)
-    edges = avatar.filter(ImageFilter.FIND_EDGES).filter(ImageFilter.MaxFilter(3))
-    # FIND_EDGES retains the source border; remove that artificial frame.
-    ImageDraw.Draw(edges).rectangle((0, 0, edges.width - 1, edges.height - 1),
-                                   outline=0, width=3)
-    edges = edges.resize((46, 35), Image.Resampling.LANCZOS)
     pixels = list(tones.get_flattened_data())
-    edge_pixels = list(edges.get_flattened_data())
-    # Keep smooth midtones sparse while preserving eyes, hair and silhouette.
-    scores = [max(((255 - value) / 255) ** 2.6,
-                  (edge_pixels[index] / 255) ** 0.7 * 0.5)
-              for index, value in enumerate(pixels)]
+    # The selected lighter portrait leaves highlights and midtones open.
+    scores = [((255 - value) / 255) ** 2.1 for value in pixels]
     ramp = "   .,:;itfLCG08@"
     return ["".join(ramp[min(len(ramp) - 1, int(scores[y * 46 + x] * len(ramp)))]
                     for x in range(46)).rstrip() for y in range(35)]
@@ -198,12 +190,13 @@ def render(config, stats, avatar, today, dark):
     section(32, config["username"].lower() + "@github")
     row(56, "OS", config["os"])
     row(78, "Uptime", uptime(config["birthday"], today))
-    row(100, "IDE", config["ide"])
-    row(146, "Languages.Programming", config["programming"])
-    row(168, "Languages.Computer", config["computer"])
-    row(190, "Languages.Real", config["languages"])
-    row(236, "Hobbies", config["hobbies"][0])
-    row(258, "", config["hobbies"][1])
+    row(100, "Hardware", config["hardware"])
+    row(122, "IDE", config["ide"])
+    row(158, "Languages.Programming", config["programming"])
+    row(180, "Languages.Computer", config["computer"])
+    row(202, "Languages.Real", config["languages"])
+    row(236, "Hobbies.Software", config["hobbies"][0])
+    row(258, "Hobbies.Hardware", config["hobbies"][1])
     section(304, "Contact")
     row(328, "Email", config["email"])
     row(350, "Discord", config["discord"])
@@ -224,7 +217,7 @@ def render(config, stats, avatar, today, dark):
     text(756, 486, "/", "muted")
     text(862, 486, f'-{stats["deletions"]:,}', "red", extra='text-anchor="end"')
     text(TEXT_RIGHT, 486, stats["updated_on"], "muted", size=11, extra='text-anchor="end"')
-    description = f'OS: {config["os"]}. Uptime: {uptime(config["birthday"], today)}. IDE: {config["ide"]}. Programming: {config["programming"]}. Computer languages: {config["computer"]}. Languages: {config["languages"]}. Hobbies: {", ".join(config["hobbies"])}. Email: {config["email"]}. Discord: {config["discord"]}. Website: {config["website"]}. Public repositories: {stats["repositories"]}. Stars: {stats["stars"]}. Authored commits in owned public repositories: {stats["commits"]}. Followers: {stats["followers"]}. Line additions: {stats["additions"]}. Line deletions: {stats["deletions"]}.'
+    description = f'OS: {config["os"]}. Uptime: {uptime(config["birthday"], today)}. Hardware: {config["hardware"]}. IDE: {config["ide"]}. Programming: {config["programming"]}. Computer languages: {config["computer"]}. Languages: {config["languages"]}. Hobbies.Software: {config["hobbies"][0]}. Hobbies.Hardware: {config["hobbies"][1]}. Email: {config["email"]}. Discord: {config["discord"]}. Website: {config["website"]}. Public repositories: {stats["repositories"]}. Stars: {stats["stars"]}. Authored commits in owned public repositories: {stats["commits"]}. Followers: {stats["followers"]}. Line additions: {stats["additions"]}. Line deletions: {stats["deletions"]}.'
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-labelledby="title description">
 <title id="title">{escape(config["username"])} — GitHub profile</title>
 <desc id="description">{escape(description)}</desc>
