@@ -5,6 +5,10 @@
 </picture>
 
 <details>
-<summary>Contact &amp; stats</summary>
+<summary>Contact</summary>
 
-Email: [EstebanPDN@Gmail.com](mailto:EstebanPDN@Gmail.com) · Discord: **thahylian** · Website:
+Email: [estebanpdn@gmail.com](mailto:estebanpdn@gmail.com)<br>
+Discord: [https://discord.gg/zy8BqH5ss](https://discord.gg/zy8BqH5ss)<br>
+Website:
+
+</details>
