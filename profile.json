@@ -1,0 +1,15 @@
+{
+  "username": "EstebanPdN",
+  "birthday": "2002-04-15",
+  "timezone": "America/Los_Angeles",
+  "os": "macOS, iOS, Linux",
+  "ide": "VS Code",
+  "programming": "Java, Python, JavaScript, C++",
+  "computer": "HTML, CSS, JSON",
+  "languages": "English, Spanish, Portuguese",
+  "hobbies": ["Video games, retro consoles", "Music, anime"],
+  "email": "EstebanPDN@Gmail.com",
+  "discord": "thahylian",
+  "website": "",
+  "exclude_commit_repositories": ["EstebanPdN/EstebanPdN"]
+}
