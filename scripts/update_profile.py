@@ -167,6 +167,7 @@ def render(config, stats, avatar, today, dark):
              if dark else
              {"bg": "#ffffff", "text": "#24292f", "key": "#953800",
               "value": "#0550ae", "muted": "#8c959f", "green": "#1a7f37", "red": "#cf222e"})
+    website_label = config["website"].removeprefix("https://").removeprefix("http://").rstrip("/")
     elements = []
     def text(x, y, value, color="text", size=FONT_SIZE, extra=""):
         elements.append(f'<text x="{x}" y="{y}" fill="{theme[color]}" font-size="{size}" {extra}>{escape(str(value))}</text>')
@@ -199,7 +200,7 @@ def render(config, stats, avatar, today, dark):
     section(304, "Contact")
     row(328, "Email", config["email"])
     row(350, "Discord", config["discord"])
-    row(372, "Website", config["website"])
+    row(372, "Website", website_label)
     section(418, "GitHub Stats")
     text(TEXT_X, 442, "Repos:", "key")
     text(TEXT_X + 65, 442, f'{stats["repositories"]:,}', "value")
@@ -216,7 +217,7 @@ def render(config, stats, avatar, today, dark):
     text(756, 486, "/", "muted")
     text(862, 486, f'-{stats["deletions"]:,}', "red", extra='text-anchor="end"')
     text(TEXT_RIGHT, 486, stats["updated_on"], "muted", size=11, extra='text-anchor="end"')
-    description = f'OS: {config["os"]}. Uptime: {uptime(config["birthday"], today)}. Hardware: {config["hardware"]}. IDE: {config["ide"]}. Programming: {config["programming"]}. Computer languages: {config["computer"]}. Languages: {config["languages"]}. Hobbies.Software: {config["hobbies"][0]}. Hobbies.Hardware: {config["hobbies"][1]}. Email: {config["email"]}. Discord: {config["discord"]}. Website: {config["website"]}. Public repositories: {stats["repositories"]}. Stars: {stats["stars"]}. Authored commits in owned public repositories: {stats["commits"]}. Followers: {stats["followers"]}. Line additions: {stats["additions"]}. Line deletions: {stats["deletions"]}.'
+    description = f'OS: {config["os"]}. Uptime: {uptime(config["birthday"], today)}. Hardware: {config["hardware"]}. IDE: {config["ide"]}. Programming: {config["programming"]}. Computer languages: {config["computer"]}. Languages: {config["languages"]}. Hobbies.Software: {config["hobbies"][0]}. Hobbies.Hardware: {config["hobbies"][1]}. Email: {config["email"]}. Discord: {config["discord"]}. Website: {website_label}. Public repositories: {stats["repositories"]}. Stars: {stats["stars"]}. Authored commits in owned public repositories: {stats["commits"]}. Followers: {stats["followers"]}. Line additions: {stats["additions"]}. Line deletions: {stats["deletions"]}.'
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}" role="img" aria-labelledby="title description">
 <title id="title">{escape(config["username"])} — GitHub profile</title>
 <desc id="description">{escape(description)}</desc>
