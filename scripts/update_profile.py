@@ -243,7 +243,7 @@ def main():
         avatar = make_avatar(stats["avatar_url"])
     # Build everything before replacing the previous known-good output.
     cards = {name: render(config, stats, avatar, today, dark)
-             for name, dark in [("profile-dark.svg", True), ("profile-light.svg", False)]}
+             for name, dark in [("profile-card-dark.svg", True), ("profile-card-light.svg", False)]}
     for name, svg in cards.items():
         (ROOT / "assets" / name).write_text(svg)
     (ROOT / "data/stats.json").write_text(json.dumps(stats, indent=2) + "\n")

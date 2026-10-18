@@ -39,7 +39,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add assets/profile-dark.svg assets/profile-light.svg assets/avatar.txt data/stats.json
+          git add assets/profile-card-dark.svg assets/profile-card-light.svg assets/avatar.txt data/stats.json
           if ! git diff --cached --quiet; then
             git commit -m '3DS Source'
             git push
