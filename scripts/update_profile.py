@@ -140,10 +140,9 @@ def uptime(birthday, today):
     if anchor(months) > today:
         months -= 1
     years, months_in_year = divmod(months, 12)
-    days = (today - anchor(months)).days
     def plural(value, unit):
         return f"{value} {unit}{'' if value == 1 else 's'}"
-    return ", ".join([plural(years, "year"), plural(months_in_year, "month"), plural(days, "day")])
+    return ", ".join([plural(years, "year"), plural(months_in_year, "month")])
 
 
 def make_avatar(url):
@@ -163,10 +162,10 @@ def make_avatar(url):
 
 
 def render(config, stats, avatar, today, dark):
-    theme = ({"bg": "#161b22", "text": "#c9d1d9", "key": "#ffa657",
+    theme = ({"bg": "#0d1117", "text": "#c9d1d9", "key": "#ffa657",
               "value": "#a5d6ff", "muted": "#616e7f", "green": "#3fb950", "red": "#f85149"}
              if dark else
-             {"bg": "#f6f8fa", "text": "#24292f", "key": "#953800",
+             {"bg": "#ffffff", "text": "#24292f", "key": "#953800",
               "value": "#0550ae", "muted": "#8c959f", "green": "#1a7f37", "red": "#cf222e"})
     elements = []
     def text(x, y, value, color="text", size=FONT_SIZE, extra=""):

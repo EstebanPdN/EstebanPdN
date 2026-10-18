@@ -8,9 +8,14 @@
   "programming": "Java, Python, JavaScript, C++",
   "computer": "HTML, CSS, JSON",
   "languages": "English, Spanish, Portuguese",
-  "hobbies": ["Videogames, Modding", "Music, Retro consoles"],
+  "hobbies": [
+    "Videogames, Modding",
+    "Music, Retro consoles"
+  ],
   "email": "estebanpdn@gmail.com",
   "discord": "thahylian",
-  "website": "",
-  "exclude_commit_repositories": ["EstebanPdN/EstebanPdN"]
+  "website": "https://estebanpdn.github.io",
+  "exclude_commit_repositories": [
+    "EstebanPdN/EstebanPdN"
+  ]
 }
