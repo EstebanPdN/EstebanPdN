@@ -4,6 +4,10 @@
   <img alt="EstebanPdN's GitHub profile: an ASCII portrait and terminal-style personal information and public GitHub statistics" src="assets/profile-card-dark.svg?v=website-domain-20261018" width="1040">
 </picture>
 
+<p>
+  <a href="https://ko-fi.com/estebanpdn"><img src="assets/kofi.svg" alt="Support EstebanPdN on Ko-fi" width="190" height="46"></a>
+</p>
+
 Most of my projecst were developed with the help of [OpenAI Codex](https://openai.com/codex/) and [Claude Code](https://claude.com/product/claude-code). Learn more about my development process [here](AI_DEVELOPMENT.md).
 
 <details>
