@@ -15,11 +15,11 @@
     <source media="(prefers-color-scheme: light)" srcset="assets/link-discord-light.svg">
     <img src="assets/link-discord-dark.svg" alt="Join Discord" width="1040" align="left">
   </picture></a>
-  <a href="https://ko-fi.com/estebanpdn"><picture>
+  <!-- <a href="https://ko-fi.com/estebanpdn"><picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/link-kofi-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/link-kofi-light.svg">
     <img src="assets/link-kofi-dark.svg" alt="Support on Ko-fi" width="1040" align="left">
-  </picture></a>
+  </picture></a> -->
   <a href="https://www.patreon.com/c/EstebanPdN"><picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/link-patreon-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/link-patreon-light.svg">
