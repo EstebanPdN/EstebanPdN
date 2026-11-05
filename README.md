@@ -5,6 +5,11 @@
 </picture>
 
 <p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/development-paragraph-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="assets/development-paragraph-light.svg">
+    <img src="assets/development-paragraph-dark.svg" alt="Most of my projects were developed with the help of OpenAI Codex and Claude Code." width="1040" align="left">
+  </picture>
   <a href="https://estebanpdn.github.io/"><picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/link-website-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/link-website-light.svg">
@@ -25,25 +30,10 @@
     <source media="(prefers-color-scheme: light)" srcset="assets/link-patreon-light.svg">
     <img src="assets/link-patreon-dark.svg" alt="Support on Patreon" width="1040" align="left">
   </picture></a>
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/development-heading-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/development-heading-light.svg">
-    <img src="assets/development-heading-dark.svg" alt="Development" width="1040" align="left">
-  </picture>
-  <a href="https://openai.com/codex/"><picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/development-codex-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/development-codex-light.svg">
-    <img src="assets/development-codex-dark.svg" alt="OpenAI Codex" width="1040" align="left">
-  </picture></a>
-  <a href="https://claude.com/product/claude-code"><picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/development-claude-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/development-claude-light.svg">
-    <img src="assets/development-claude-dark.svg" alt="Claude Code" width="1040" align="left">
-  </picture></a>
   <a href="AI_DEVELOPMENT.md"><picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/development-process-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="assets/development-process-light.svg">
-    <img src="assets/development-process-dark.svg" alt="How I develop these projects" width="1040" align="left">
+    <source media="(prefers-color-scheme: dark)" srcset="assets/development-process-dark.svg?v=paragraph-20261104">
+    <source media="(prefers-color-scheme: light)" srcset="assets/development-process-light.svg?v=paragraph-20261104">
+    <img src="assets/development-process-dark.svg?v=paragraph-20261104" alt="Learn more about my development process" width="1040" align="left">
   </picture></a>
   <br clear="all">
 </p>
