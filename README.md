@@ -29,12 +29,3 @@
 </p>
 
 Most of my projecst were developed with the help of [OpenAI Codex](https://openai.com/codex/) and [Claude Code](https://claude.com/product/claude-code). Learn more about my development process [here](AI_DEVELOPMENT.md).
-
-<details>
-<summary>Contact</summary>
-
-Email: [estebanpdn@gmail.com](mailto:estebanpdn@gmail.com)<br>
-Discord: [https://discord.gg/zy8BqH5ss](https://discord.gg/zy8BqH5ss)<br>
-Website: [estebanpdn.github.io](https://estebanpdn.github.io)
-
-</details>
