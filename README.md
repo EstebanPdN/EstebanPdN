@@ -8,23 +8,24 @@
   <a href="https://estebanpdn.github.io/"><picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/link-website-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/link-website-light.svg">
-    <img src="assets/link-website-dark.svg" alt="Check my website" width="1040" height="26">
-  </picture></a><br>
+    <img src="assets/link-website-dark.svg" alt="Check my website" width="1040" align="left">
+  </picture></a>
   <a href="https://discord.gg/zy8BqH5ss"><picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/link-discord-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/link-discord-light.svg">
-    <img src="assets/link-discord-dark.svg" alt="Join Discord" width="1040" height="26">
-  </picture></a><br>
+    <img src="assets/link-discord-dark.svg" alt="Join Discord" width="1040" align="left">
+  </picture></a>
   <a href="https://ko-fi.com/estebanpdn"><picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/link-kofi-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/link-kofi-light.svg">
-    <img src="assets/link-kofi-dark.svg" alt="Support on Ko-fi" width="1040" height="26">
-  </picture></a><br>
+    <img src="assets/link-kofi-dark.svg" alt="Support on Ko-fi" width="1040" align="left">
+  </picture></a>
   <a href="https://www.patreon.com/c/EstebanPdN"><picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/link-patreon-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/link-patreon-light.svg">
-    <img src="assets/link-patreon-dark.svg" alt="Support on Patreon" width="1040" height="26">
+    <img src="assets/link-patreon-dark.svg" alt="Support on Patreon" width="1040" align="left">
   </picture></a>
+  <br clear="all">
 </p>
 
 Most of my projecst were developed with the help of [OpenAI Codex](https://openai.com/codex/) and [Claude Code](https://claude.com/product/claude-code). Learn more about my development process [here](AI_DEVELOPMENT.md).
