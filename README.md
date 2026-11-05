@@ -1,7 +1,7 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/profile-card-dark.svg?v=website-domain-20261018">
-  <source media="(prefers-color-scheme: light)" srcset="assets/profile-card-light.svg?v=website-domain-20261018">
-  <img alt="EstebanPdN's GitHub profile: an ASCII portrait and terminal-style personal information and public GitHub statistics" src="assets/profile-card-dark.svg?v=website-domain-20261018" width="1040">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/profile-card-dark.svg?v=stats-20261104-41972996640">
+  <source media="(prefers-color-scheme: light)" srcset="assets/profile-card-light.svg?v=stats-20261104-41972996640">
+  <img alt="EstebanPdN's GitHub profile: an ASCII portrait and terminal-style personal information and public GitHub statistics" src="assets/profile-card-dark.svg?v=stats-20261104-41972996640" width="1040">
 </picture>
 
 <p>
