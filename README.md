@@ -15,7 +15,7 @@
     <source media="(prefers-color-scheme: light)" srcset="assets/link-website-light.svg">
     <img src="assets/link-website-dark.svg" alt="Check my website" width="1040" align="left">
   </picture></a>
-  <a href="https://discord.gg/zy8BqH5ss"><picture>
+  <a href="https://discord.com/servers/esteban-s-forge-1533248895663210506"><picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/link-discord-dark.svg">
     <source media="(prefers-color-scheme: light)" srcset="assets/link-discord-light.svg">
     <img src="assets/link-discord-dark.svg" alt="Join Discord" width="1040" align="left">
